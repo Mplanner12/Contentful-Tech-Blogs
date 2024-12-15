@@ -1,7 +1,7 @@
 import { fetchContent } from "@/lib/contentful";
 import Link from "next/link";
 import { BlogPost } from "@/utils/types";
-import { mapToBlogPost } from "@/app/blog/[slug]/page";
+import { mapToBlogPost } from "@/utils/types";
 
 export default async function BlogList() {
   const rawPosts = await fetchContent("blogPost");

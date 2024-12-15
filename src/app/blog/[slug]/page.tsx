@@ -7,7 +7,7 @@ interface BlogPostProps {
   params: { slug: string };
 }
 
-export function mapToBlogPost(rawPost: any): BlogPost {
+function mapToBlogPost(rawPost: any): BlogPost {
   return {
     fields: {
       internalName: rawPost.fields.internalName || "",
