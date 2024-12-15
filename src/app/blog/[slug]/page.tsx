@@ -1,6 +1,5 @@
 import { fetchContent } from "@/lib/contentful";
 import { BlogPost } from "@/utils/types";
-import Image from "next/image";
 import React, { JSX } from "react";
 
 interface BlogPostProps {
