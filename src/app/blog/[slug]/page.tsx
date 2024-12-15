@@ -4,7 +4,7 @@ import Link from "next/link";
 import React, { JSX } from "react";
 
 interface BlogPostProps {
-  params: { slug: string };
+  post: BlogPost | null;
 }
 
 function mapToBlogPost(rawPost: any): BlogPost {
@@ -45,8 +45,12 @@ export async function generateStaticParams() {
   }));
 }
 
-export default async function BlogPost({ params }: BlogPostProps) {
-  const { slug } = await params; // Await the params
+export default async function BlogPost({
+  params,
+}: {
+  params: { slug: string };
+}) {
+  const slug = await params.slug;
   const rawPosts = await fetchContent("blogPost");
   const posts: BlogPost[] = rawPosts.map(mapToBlogPost);
   console.log(posts);
