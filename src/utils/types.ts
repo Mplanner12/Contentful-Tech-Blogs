@@ -38,3 +38,32 @@ export interface BlogPost {
     };
   };
 }
+
+export function mapToBlogPost(rawPost: any): BlogPost {
+  return {
+    fields: {
+      internalName: rawPost.fields.internalName || "",
+      entryTitle: rawPost.fields.entryTitle || "",
+      seoFields: rawPost.fields.seoFields || {},
+      slug: rawPost.fields.slug || "",
+      author: rawPost.fields.author || {
+        sys: { id: "", type: "", linkType: "" },
+      },
+      publishedDate: rawPost.fields.publishedDate || "",
+      title: rawPost.fields.title || "",
+      subtitle: rawPost.fields.subtitle || "",
+      featuredImage: rawPost.fields.featuredImage || {
+        fields: { file: { url: "" } },
+      },
+      content: rawPost.fields.content || "",
+      description: rawPost.fields.description || "",
+      relatedBlogPosts: rawPost.fields.relatedBlogPosts || [],
+    },
+    sys: {
+      id: rawPost.sys.id,
+      createdAt: rawPost.sys.createdAt,
+      updatedAt: rawPost.sys.updatedAt,
+      contentType: rawPost.sys.contentType,
+    },
+  };
+}

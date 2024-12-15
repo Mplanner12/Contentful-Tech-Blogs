@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const Home = () => (
   <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-r from-green-400 via-blue-500 to-purple-600 text-white px-4">
     <header className="text-center mb-8">
@@ -10,12 +12,12 @@ const Home = () => (
     </header>
 
     <main className="text-center">
-      <a
+      <Link
         href="/blog"
         className="bg-white text-green-500 font-bold py-3 px-6 rounded-lg shadow-md hover:bg-green-500 hover:text-white transition duration-300"
       >
         Explore Blogs
-      </a>
+      </Link>
     </main>
     <footer className="absolute bottom-4 text-sm text-gray-200">
       © {new Date().getFullYear()} Tech Blogs. All rights reserved.

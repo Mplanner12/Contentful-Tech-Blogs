@@ -1,12 +1,13 @@
 import { fetchContent } from "@/lib/contentful";
 import { BlogPost } from "@/utils/types";
+import Link from "next/link";
 import React, { JSX } from "react";
 
 interface BlogPostProps {
   params: { slug: string };
 }
 
-export function mapToBlogPost(rawPost: any): BlogPost {
+function mapToBlogPost(rawPost: any): BlogPost {
   return {
     fields: {
       internalName: rawPost.fields.internalName || "",
@@ -123,12 +124,12 @@ export default async function BlogPost({ params }: BlogPostProps) {
     <div className="min-h-screen bg-greenfield-light text-gray-800 p-6">
       <header className="flex justify-start flex-col items-start bg-gradient-to-r from-gray-700 to-gray-900 py-4 px-6 rounded-lg shadow-md">
         <h1 className="text-2xl font-bold text-white">Tech Blogs</h1>
-        <a
+        <Link
           href="/blog"
           className="text-white underline hover:text-greenfield-light"
         >
           Back to Blog List
-        </a>
+        </Link>
       </header>
 
       <main className="mt-8 bg-white rounded-lg shadow-lg overflow-hidden">
