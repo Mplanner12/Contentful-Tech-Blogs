@@ -6,9 +6,9 @@ const client = createClient({
   accessToken: process.env.CONTENTFUL_ACCESS_TOKEN as string,
 });
 
-const managementClient = createManagementClient({
-  accessToken: process.env.CONTENTFUL_MANAGEMENT_TOKEN as string,
-});
+// const managementClient = createManagementClient({
+//   accessToken: process.env.CONTENTFUL_MANAGEMENT_TOKEN as string,
+// });
 
 export const fetchContent = async (contentType: string, query = {}) => {
   const entries = await client.getEntries({
