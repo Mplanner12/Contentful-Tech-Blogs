@@ -1,36 +1,73 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Contentful Blog
+
+This Next.js application fetches blog posts from Contentful and displays them in a user-friendly format.
+
+## Features
+
+- Fetches blog posts from Contentful using server-side rendering.
+- Displays a list of blog posts with featured images, titles, subtitles, and publication dates.
+- Dynamically generates individual blog post pages.
+- Renders rich text content from Contentful, including paragraphs, embedded entries (related blog posts), and images.
 
 ## Getting Started
 
-First, run the development server:
+1. **Clone the repository:**
 
-```bash
+   ```bash
+   git clone https://github.com/your-username/contentful-blog.git
+   ```
+
+## Install dependencies:
+
+cd contentful-blog
+npm install
+Set up Contentful:
+
+## Create a Contentful account.
+
+Create a space and define content models for "blogPost".
+
+The content model should include fields for:
+
+internalName (Text) - An internal name
+entryTitle (Text)
+seoFields (SEO fields - rich text)
+slug (Text) - The slug for the blog post URL.
+author (Reference to an "author" content type)
+publishedDate (Date)
+title (Text)
+subtitle (Text)
+featuredImage (Media)
+content (Rich Text)
+description (Text)
+relatedBlogPosts (Reference to other blog posts)
+Populate your space with blog post entries.
+
+Configure environment variables:
+
+## Create a .env.local file in the root directory and add the following environment variables:
+
+CONTENTFUL_SPACE_ID=your_space_id
+CONTENTFUL_ACCESS_TOKEN=your_access_token
+Replace your_space_id and your_access_token with your actual Contentful credentials.
+
+Run the development server:
+
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+The application will be available at http://localhost:3000.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Deployment (Example using Vercel)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+This example shows deployment with Vercel. Adapt as needed for other platforms.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Push your code to a Git repository (e.g., GitHub, GitLab).
 
-## Learn More
+Create a Vercel account and import the project.
 
-To learn more about Next.js, take a look at the following resources:
+Set the environment variables CONTENTFUL_SPACE_ID and CONTENTFUL_ACCESS_TOKEN in the Vercel project settings. These should match the values you have in your local .env.local file.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Deploy! Vercel will handle the build and deployment process.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Contributing
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Contributions are welcome! Please open an issue or submit a pull request.

@@ -1,10 +1,11 @@
 import { fetchContent } from "@/lib/contentful";
 import Link from "next/link";
 import { BlogPost } from "@/utils/types";
+import { mapToBlogPost } from "@/app/blog/[slug]/page";
 
 export default async function BlogList() {
-  const posts: BlogPost[] = await fetchContent("blogPost");
-
+  const rawPosts = await fetchContent("blogPost");
+  const posts: BlogPost[] = rawPosts.map(mapToBlogPost);
   return (
     <div className="min-h-screen bg-greenfield-light text-gray-800 p-6">
       <header className="flex justify-between items-center bg-gradient-to-r from-gray-700 to-gray-900 py-4 px-6 rounded-lg shadow-md">

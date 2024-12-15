@@ -7,7 +7,7 @@ interface BlogPostProps {
   params: { slug: string };
 }
 
-function mapToBlogPost(rawPost: any): BlogPost {
+export function mapToBlogPost(rawPost: any): BlogPost {
   return {
     fields: {
       internalName: rawPost.fields.internalName || "",
@@ -93,7 +93,7 @@ export default async function BlogPost({ params }: BlogPostProps) {
 
       //Find the embedded entry within your existing data
       const entry = post.fields.relatedBlogPosts?.find(
-        (relatedPost) => relatedPost.sys.id === entryId
+        (relatedPost: any) => relatedPost.sys.id === entryId
       );
 
       if (entryTitle) {
@@ -123,7 +123,7 @@ export default async function BlogPost({ params }: BlogPostProps) {
   return (
     <div className="min-h-screen bg-greenfield-light text-gray-800 p-6">
       <header className="flex justify-start flex-col items-start bg-gradient-to-r from-gray-700 to-gray-900 py-4 px-6 rounded-lg shadow-md">
-        <h1 className="text-2xl font-bold text-white">Greenfield Blogs</h1>
+        <h1 className="text-2xl font-bold text-white">Tech Blogs</h1>
         <a
           href="/blog"
           className="text-white underline hover:text-greenfield-light"

@@ -24,12 +24,8 @@ export interface BlogPost {
     content: any;
     description: any;
     relatedBlogPosts: {
-      sys: {
-        id: string;
-        type: string;
-        linkType: string;
-      }[];
-    };
+      sys: { id: string; type: string; linkType: string };
+    }[];
   };
   sys?: {
     id: string;
