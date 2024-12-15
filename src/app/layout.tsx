@@ -29,7 +29,7 @@ export default function RootLayout({
         <link rel="icon" href="/tech.webp" />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased font-poppins`}
       >
         {children}
       </body>
