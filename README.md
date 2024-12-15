@@ -4,10 +4,10 @@ This Next.js application fetches blog posts from Contentful and displays them in
 
 ## Features
 
-* Fetches blog posts from Contentful using server-side rendering.
-* Displays a list of blog posts with featured images, titles, subtitles, and publication dates.
-* Dynamically generates individual blog post pages.
-* Renders rich text content from Contentful, including paragraphs, embedded entries (related blog posts), and images.
+- Fetches blog posts from Contentful using server-side rendering.
+- Displays a list of blog posts with featured images, titles, subtitles, and publication dates.
+- Dynamically generates individual blog post pages.
+- Renders rich text content from Contentful, including paragraphs, embedded entries (related blog posts), and images.
 
 ## Getting Started
 
@@ -15,6 +15,8 @@ This Next.js application fetches blog posts from Contentful and displays them in
 
    ```bash
    git clone https://github.com/your-username/contentful-blog.git
+   ```
+
 ## Install dependencies:
 
 cd contentful-blog
@@ -55,6 +57,7 @@ npm run dev
 The application will be available at http://localhost:3000.
 
 ## Deployment (Example using Vercel)
+
 This example shows deployment with Vercel. Adapt as needed for other platforms.
 
 Push your code to a Git repository (e.g., GitHub, GitLab).
@@ -66,4 +69,5 @@ Set the environment variables CONTENTFUL_SPACE_ID and CONTENTFUL_ACCESS_TOKEN in
 Deploy! Vercel will handle the build and deployment process.
 
 ## Contributing
+
 Contributions are welcome! Please open an issue or submit a pull request.
