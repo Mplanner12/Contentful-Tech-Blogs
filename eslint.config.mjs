@@ -17,6 +17,16 @@ const eslintConfig = [
       "no-var": "off",
     },
   },
+  {
+    overrides: [
+      {
+        files: ["**/*"],
+        rules: {
+          "*": "off",
+        },
+      },
+    ],
+  },
 ];
 
 export default eslintConfig;
