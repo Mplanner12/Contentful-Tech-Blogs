@@ -1,5 +1,5 @@
 import { createClient } from "contentful";
-import { createClient as createManagementClient } from "contentful-management";
+// import { createClient as createManagementClient } from "contentful-management";
 
 const client = createClient({
   space: process.env.CONTENTFUL_SPACE_ID as string,
